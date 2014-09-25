@@ -1,2 +1,2 @@
-browserify-starter
-==================
+browserify-react-starter
+========================
