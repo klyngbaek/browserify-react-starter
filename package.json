@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "build": "browserify browser.js -o static/bundle.js",
+    "watch": "watchify browser.js -o static/bundle.js --debug --verbose",
+    "start": "node cmd.js",
+    "jsx": "jsx --watch src/ bld/"
+  },
+  "name": "browserify-starter",
+  "description": "",
+  "version": "0.0.0",
+  "main": "server.js",
+  "author": "Kristian Lyngbaek <klyngbaek@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "ecstatic": "latest",
+    "optimist": "latest",
+    "page": "latest",
+    "react": "latest",
+    "browserify": "latest",
+    "watchify": "latest",
+    "react-tools": "latest"
+  }
+}
