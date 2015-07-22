@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "browserify browser/browser.jsx -t reactify -g uglifyify -o static/bundle.js",
-    "watch": "watchify browser/browser.jsx -o static/bundle.js --debug --verbose",
+    "watch": "watchify browser/browser.jsx -t reactify -g uglifyify --debug -o static/bundle.js --debug --verbose",
     "start": "node server.js"
   },
   "name": "browserify-react-starter",
