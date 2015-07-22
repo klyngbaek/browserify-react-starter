@@ -1,23 +1,39 @@
 {
   "scripts": {
-    "build": "browserify browser.js -o static/bundle.js",
-    "watch": "watchify browser.js -o static/bundle.js --debug --verbose",
-    "start": "node cmd.js",
-    "jsx": "jsx --watch src/ bld/"
+    "build": "browserify browser/browser.jsx -t reactify -g uglifyify -o static/bundle.js",
+    "watch": "watchify browser/browser.jsx -o static/bundle.js --debug --verbose",
+    "start": "node server.js"
   },
-  "name": "browserify-starter",
-  "description": "",
-  "version": "0.0.0",
+  "name": "browserify-react-starter",
+  "description": "browserify-react-starter ========================",
+  "version": "0.0.1",
   "main": "server.js",
   "author": "Kristian Lyngbaek <klyngbaek@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
+    "browserify": "latest",
     "ecstatic": "latest",
     "optimist": "latest",
     "page": "latest",
     "react": "latest",
-    "browserify": "latest",
+    "react-router": "latest"
+  },
+  "devDependencies": {
+    "reactify": "latest",
     "watchify": "latest",
-    "react-tools": "latest"
-  }
+    "uglifyify": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klyngbaek/browserify-react-starter.git"
+  },
+  "keywords": [
+    "broswerify",
+    "react",
+    "starter"
+  ],
+  "bugs": {
+    "url": "https://github.com/klyngbaek/browserify-react-starter/issues"
+  },
+  "homepage": "https://github.com/klyngbaek/browserify-react-starter#readme"
 }

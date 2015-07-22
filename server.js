@@ -1,37 +1,24 @@
-// node modules
-var http = require('http');
-var fs = require('fs');
+// set process title to something recognizable
+process.title = 'node-starter';
 
-// npm modules
-var ecstatic = require('ecstatic')(__dirname);
+var WebServer = require('server.js');
 
-module.exports = WebServer;
-
-function WebServer(opts) {
-    if (!(this instanceof WebServer)) return new WebServer(opts);
-
-    if (!opts) opts = {};
-    this.port = opts.port;
-
-    console.log('Starting HTTP server');
-    var server = http.createServer(requestListener);
-    console.log('Listening on port ' + this.port);
-    server.listen(this.port);
-
-    function requestListener(req, res) {
-        console.log(req.url);
-        console.log(req.url.indexOf('/static'));
-        if (req.url.indexOf('/static') === 0) {
-            ecstatic(req, res);
-        } 
-        else if (req.url === '/bundle.js') {
-            res.setHeader("Content-Type", "application/javascript");
-            fs.createReadStream(__dirname + '/static/bundle.js').pipe(res);
-        } else if (req.url === '/style.css') {
-            res.setHeader("Content-Type", "text/css");
-            fs.createReadStream(__dirname + '/static/style.css').pipe(res);
-        } else {
-            fs.createReadStream(__dirname + '/static/index.html').pipe(res);
-        }
-    }
+var optimist = require('optimist')
+    .describe('h', 'Display help')
+    .describe('p', 'web server port')
+    .alias('h', 'help')
+    .alias('p', 'port')
+    .default({
+        p: '8500'
+    });
+var argv = optimist.argv;
+if (argv.help) {
+    optimist.showHelp();
+    process.exit(0);
 }
+
+var WebServer = require('./server.js');
+
+WebServer({
+    port: argv.port,
+});
