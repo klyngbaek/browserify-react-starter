@@ -2,3 +2,4 @@ static/style.css
 static/bundle.js
 node_modules/
 bld/
+npm-debug.log
