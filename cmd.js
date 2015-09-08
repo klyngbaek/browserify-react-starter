@@ -1,8 +1,6 @@
 // set process title to something recognizable
 process.title = 'node-starter';
 
-var WebServer = require('server.js');
-
 var optimist = require('optimist')
     .describe('h', 'Display help')
     .describe('p', 'web server port')
