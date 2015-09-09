@@ -14,12 +14,12 @@ var PageNotFound = require('./pagenotfound.jsx');
 
 var routes = (
     <Route path="/" handler={App}>
-    	<Route handler={Home}>
-            <Route path="/a" handler={A} />
-            <Route path="/b" handler={B} />
-        </Route>
-        <DefaultRoute handler={Home} />
-        <NotFoundRoute handler={PageNotFound} />
+      <Route handler={Home}>
+        <Route path="/a" handler={A} />
+        <Route path="/b" handler={B} />
+      </Route>
+      <DefaultRoute handler={Home} />
+      <NotFoundRoute handler={PageNotFound} />
     </Route>
 );
 

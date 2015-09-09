@@ -3,7 +3,7 @@ browserify-react-starter
 
 You may run into a limit on open files.  In your ~/.profile, set ulimit -n 2048
 
-- `npm -g install browserify`
+- `npm -g install browserify atomify bootstrap`
 - `npm install`
 - `npm run build`
 - `npm start`
