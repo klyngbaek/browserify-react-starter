@@ -5,22 +5,24 @@ var Link = Router.Link;
 
 module.exports = React.createClass({
     render: function() {
-
-        var divStyle = {
-            borderColor: 'black',
-            borderWidth: '1px',
-            borderStyle: 'solid',
-            backgroundColor: '#FEFEFE',
-            margin: '10px'
-        };
-
         return (
-            <div style={divStyle}>
-                This is a navbar with links to places!<br /><br />
-                <Link to="/a">Link to A</Link><br />
-                <Link to="/b">Link to B</Link><br /><br />
-                <RouteHandler />
+          <nav className="navbar navbar-inverse navbar-fixed-top">
+            <div className="container-fluid">
+              <div className="navbar-header">
+                <Link className="navbar-brand" to='/'>Knownow</Link>
+              </div>
+              <div id="navbar" className="navbar-collapse collapse">
+                <ul className="nav navbar-nav navbar-right">
+                  <li><Link to="/">Dashboard</Link></li>
+                  <li><Link to="/a">Settings</Link></li>
+                  <li><Link to="/b">Profile</Link></li>
+                  <li><a href="#">Help</a></li>
+                </ul>
+                <div id="search-form"/>
+              </div>
             </div>
+            <RouteHandler />
+          </nav>
         );
     }
 });

@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "browserify browser/browser.jsx -t reactify -g uglifyify -o static/bundle.js",
+    "build": "browserify browser/browser.jsx -t reactify -g uglifyify -o static/bundle.js && atomify -c [ less/main.less ] -o static/bundle.css",
     "watch": "watchify browser/browser.jsx -t reactify -g uglifyify --debug -o static/bundle.js --debug --verbose",
     "start": "node cmd.js"
   },
@@ -16,12 +16,14 @@
     "optimist": "latest",
     "page": "latest",
     "react": "latest",
-    "react-router": "latest"
+    "react-router": "latest",
+    "bootstrap": "latest"
   },
   "devDependencies": {
     "reactify": "latest",
     "watchify": "latest",
-    "uglifyify": "latest"
+    "uglifyify": "latest",
+    "atomify": "latest"
   },
   "repository": {
     "type": "git",
