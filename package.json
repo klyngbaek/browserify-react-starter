@@ -1,10 +1,12 @@
 {
   "scripts": {
-    "build": "npm run build-css; npm run build-js",
+    "build": "npm run build-css && npm run build-js",
     "build-js": "browserify browser/browser.jsx -t [ babelify --presets [ react ] ] -g uglifyify -o static/bundle.js",
-    "watch": "watchify browser/browser.jsx -t [ babelify --presets [ react ] ] -o static/bundle.js --debug --verbose",
-    "start": "node cmd.js",
-    "build-css": "less static/style.less > static/style.css"
+    "build-css": "less static/style.less > static/style.css",
+    "watch": "npm run watch-css && npm run watch-js",
+    "watch-js": "watchify browser/browser.jsx -t [ babelify --presets [ react ] ] -o static/bundle.js --debug --verbose",
+    "watch-css": "catw -c 'lessc -' 'static/style.less' -o static/style.css -v",
+    "start": "node cmd.js"
   },
   "name": "browserify-react-starter",
   "description": "browserify-react-starter ========================",
@@ -23,6 +25,7 @@
     "babel-preset-react": "^6.3.13",
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
+    "catw": "^1.0.1",
     "less": "^2.6.0",
     "uglifyify": "^3.0.1",
     "watchify": "^3.7.0"
