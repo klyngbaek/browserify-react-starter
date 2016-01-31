@@ -1,6 +1,6 @@
 var React = require('react');
-var Router = require('react-router');
-var Link = Router.Link;
+var Router = require('react-router').Router;
+var Link = require('react-router').Link;
 
 module.exports = React.createClass({
     render: function() {

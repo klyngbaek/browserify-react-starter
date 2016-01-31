@@ -1,34 +1,41 @@
 {
   "scripts": {
-    "build": "browserify browser/browser.jsx -t reactify -g uglifyify -o static/bundle.js",
-    "watch": "watchify browser/browser.jsx -t reactify -g uglifyify --debug -o static/bundle.js --debug --verbose",
-    "start": "node cmd.js"
+    "build": "browserify browser/browser.jsx -t [ babelify --presets [ react ] ] -g uglifyify -o static/bundle.js",
+    "watch": "watchify browser/browser.jsx -t [ babelify --presets [ react ] ] -o static/bundle.js --debug --verbose",
+    "start": "node cmd.js",
+    "less": "less static/style.less > static/style.css"
   },
   "name": "browserify-react-starter",
   "description": "browserify-react-starter ========================",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "server.js",
   "author": "Kristian Lyngbaek <klyngbaek@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "browserify": "latest",
-    "ecstatic": "latest",
-    "optimist": "latest",
-    "page": "latest",
-    "react": "latest",
-    "react-router": "latest"
+    "ecstatic": "^1.4.0",
+    "optimist": "^0.6.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-router": "^2.0.0-rc5"
   },
   "devDependencies": {
-    "reactify": "latest",
-    "watchify": "latest",
-    "uglifyify": "latest"
+    "babel-preset-react": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "less": "^2.6.0",
+    "uglifyify": "^3.0.1",
+    "watchify": "^3.7.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/klyngbaek/browserify-react-starter.git"
   },
   "keywords": [
-    "broswerify",
+    "babelify",
+    "node",
+    "nodejs",
+    "node-js",
+    "browserify",
     "react",
     "starter"
   ],

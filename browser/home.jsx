@@ -1,7 +1,7 @@
 var React = require('react');
-var Router = require('react-router');
+var Router = require('react-router').Router;
+var Link = require('react-router').Link;
 var NavBar = require('./navbar.jsx');
-var Link = Router.Link;
 
 module.exports = React.createClass({
     render: function() {
