@@ -1,7 +1,7 @@
 browserify-react-starter
 ========================
 
-- `npm install`
+- `npm install browserify-react-starter`
 - `npm run build`
 - `npm start`
 - in browser, go to localhost:8500

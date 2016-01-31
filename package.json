@@ -1,9 +1,10 @@
 {
   "scripts": {
-    "build": "browserify browser/browser.jsx -t [ babelify --presets [ react ] ] -g uglifyify -o static/bundle.js",
+    "build": "npm run build-css; npm run build-js",
+    "build-js": "browserify browser/browser.jsx -t [ babelify --presets [ react ] ] -g uglifyify -o static/bundle.js",
     "watch": "watchify browser/browser.jsx -t [ babelify --presets [ react ] ] -o static/bundle.js --debug --verbose",
     "start": "node cmd.js",
-    "less": "less static/style.less > static/style.css"
+    "build-css": "less static/style.less > static/style.css"
   },
   "name": "browserify-react-starter",
   "description": "browserify-react-starter ========================",
